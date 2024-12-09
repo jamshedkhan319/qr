@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Scanner</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>QR Code Scanner</h1>
+    <input type="text" id="qrInput" placeholder="Enter text to generate QR Code" />
+    <button id="generateQR">Generate QR Code</button>
+    <div id="qrContainer"></div>
+
+    <h3>Upload an Image</h3>
+    <input type="file" id="uploadQR" accept="image/*" />
+    <div id="imageResult">Result: <span id="imageQRResult"></span></div>
+
+    <h3>Scan with Camera</h3>
+    <button id="scanQR">Scan QR Code</button>
+    <div id="result">Result: <span id="qrResult"></span></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
+  <script src="https://unpkg.com/jsqr/dist/jsQR.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
