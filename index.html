@@ -7,13 +7,19 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>QR Code Generator</h1>
-        <input type="text" id="text" value="Default Text" placeholder="Enter text or URL">
-        <button id="generate-btn">Generate QR Code</button>
-        <div id="qrcode"></div>
+    <div class="wrapper">
+        <header>
+            <h1>QR Code Generator</h1>
+            <p>Enter text or URL to generate a QR code</p>
+        </header>
+        <div class="form">
+            <input type="text" spellcheck="false" id="qr-input" value="Default Text">
+            <button id="generate-btn">Generate QR Code</button>
+        </div>
+        <div class="qr-code">
+            <img src="" alt="QR Code">
+        </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
