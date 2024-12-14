@@ -1,14 +1,33 @@
-document.getElementById('generate-btn').addEventListener('click', function () {
-    const text = document.getElementById('text').value;
-    const qrCodeDiv = document.getElementById('qrcode');
+const wrapper = document.querySelector(".wrapper"),
+    qrInput = document.querySelector("#qr-input"),
+    generateBtn = document.querySelector("#generate-btn"),
+    qrImg = document.querySelector(".qr-code img");
 
-    // Clear previous QR code
-    qrCodeDiv.innerHTML = '';
+let previousValue = "";
 
-    // Generate QR Code
-    QRCode.toCanvas(qrCodeDiv, text, function (error) {
-        if (error) {
-            alert('Error generating QR Code: ' + error);
-        }
+// Generate QR Code on button click
+generateBtn.addEventListener("click", () => {
+    const inputValue = qrInput.value.trim();
+
+    // Prevent generating the same QR code again
+    if (!inputValue || inputValue === previousValue) return;
+
+    previousValue = inputValue;
+    generateBtn.innerText = "Generating QR Code...";
+    qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(
+        inputValue
+    )}`;
+    
+    qrImg.addEventListener("load", () => {
+        wrapper.classList.add("active");
+        generateBtn.innerText = "Generate QR Code";
     });
+});
+
+// Remove QR code if input is empty
+qrInput.addEventListener("input", () => {
+    if (!qrInput.value.trim()) {
+        wrapper.classList.remove("active");
+        previousValue = "";
+    }
 });
