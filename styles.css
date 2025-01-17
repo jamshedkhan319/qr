@@ -33,6 +33,12 @@ header h1 {
     margin-bottom: 10px;
 }
 
+header h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
 header p {
     color: #555;
     font-size: 16px;
