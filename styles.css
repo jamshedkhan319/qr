@@ -82,10 +82,27 @@ header p {
 }
 
 
-.form button {
-    width: 100%;
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.form input {
+    flex: 1;
     height: 50px;
-    margin-top: 15px;
+    padding: 0 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+.form button {
+    height: 50px;
+    padding: 0 15px;
     background: #3498db;
     color: #fff;
     font-size: 16px;
@@ -95,15 +112,16 @@ header p {
     transition: background 0.3s;
 }
 
+.form button:hover {
+    background: #2980b9;
+}
+
+#generate-btn {
+    flex: 1;
+    margin-top: 15px;
+}
+
 #copy-btn {
-    margin-top: 10px; /* Add some space between the buttons */
-    background: #2ecc71; /* Different color for the copy button */
+    width: auto;
 }
-
-#copy-btn:hover {
-    background: #27ae60;
-}
-
-
-
 
