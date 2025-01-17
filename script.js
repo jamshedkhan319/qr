@@ -71,19 +71,9 @@ cutBtn.addEventListener("click", () => {
     });
 });
 
-// Remove QR code if input is empty
-qrInput.addEventListener("input", () => {
-    if (!qrInput.value.trim()) {
-        wrapper.classList.remove("active");
-        previousValue = "";
-        qrText.innerText = "Generated QR Code URL will appear here...";
-    }
-});
-
-
-
-
-       const copyBtn = document.querySelector("#copy-btn");
+        // test copy button
+        
+const copyBtn = document.querySelector("#copy-btn");
 
 // Copy text from the input field on button click
 copyBtn.addEventListener("click", () => {
@@ -101,7 +91,24 @@ copyBtn.addEventListener("click", () => {
             setTimeout(() => copyBtn.innerText = "Copy Text", 2000);
         });
 });
- 
+
+        
+
+// Remove QR code if input is empty
+qrInput.addEventListener("input", () => {
+    if (!qrInput.value.trim()) {
+        wrapper.classList.remove("active");
+        previousValue = "";
+        qrText.innerText = "Generated QR Code URL will appear here...";
+    }
+});
+
+
+
+
+       
+
+        
 
 
 
