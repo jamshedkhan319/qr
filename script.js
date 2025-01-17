@@ -82,4 +82,27 @@ qrInput.addEventListener("input", () => {
 
 
 
+
+       const copyBtn = document.querySelector("#copy-btn");
+
+// Copy text from the input field on button click
+copyBtn.addEventListener("click", () => {
+    const inputValue = qrInput.value.trim();
+    if (!inputValue) return;
+
+    // Copy the input value to clipboard
+    navigator.clipboard.writeText(inputValue)
+        .then(() => {
+            copyBtn.innerText = "Copied!"; // Temporary success message
+            setTimeout(() => copyBtn.innerText = "Copy Text", 2000); // Reset button text after 2 seconds
+        })
+        .catch(() => {
+            copyBtn.innerText = "Failed to Copy!";
+            setTimeout(() => copyBtn.innerText = "Copy Text", 2000);
+        });
+});
+ 
+
+
+
         
